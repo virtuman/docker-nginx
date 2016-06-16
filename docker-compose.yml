@@ -1,0 +1,17 @@
+nginx:
+  build: .
+  labels:
+    io.rancher.container.network: "true"
+    io.rancher.container.pull_image: always
+    io.rancher.scheduler.affinity:host_label: nginx=true
+    io.rancher.container.hostname_override: container_name
+  ports:
+    - "83:80"
+    - "444:443"
+  volumes:
+    - ./conf/ldap.conf:/etc/nginx/conf.d/ldap.conf
+    - /etc/nginx/ssl:/etc/nginx/ssl
+  expose:
+    - 80
+    - 443
+    
