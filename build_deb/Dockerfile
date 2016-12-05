@@ -6,12 +6,12 @@ RUN echo "deb-src http://nginx.org/packages/mainline/debian/ jessie nginx" >> /e
 WORKDIR /tmp
 
 
-ENV NGINX_BASE_VERSION=1.11.1 \
-    NGINX_VERSION=1.11.1-1~jessie \
-    NPS_VERSION=1.11.33.2
+ENV NGINX_BASE_VERSION=1.11.6 \
+    NGINX_VERSION=1.11.6-1~jessie \
+    NPS_VERSION=1.11.33.4
 
 RUN apt-get update && \
-    apt-get install -y wget libgd2-xpm-dev git libgeoip-dev libperl-dev libxslt1-dev lsb-release ca-certificates build-essential zlib1g-dev libpcre3 libpcre3-dev unzip debhelper libssl-dev libldap-dev && \
+    apt-get install -y quilt wget libgd2-xpm-dev git libgeoip-dev libperl-dev libxslt1-dev lsb-release ca-certificates build-essential zlib1g-dev libpcre3 libpcre3-dev unzip debhelper libssl-dev libldap-dev && \
     apt-get source nginx=${NGINX_VERSION}
 
 

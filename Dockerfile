@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-ENV NGINX_VERSION=1.11.1-1~jessie \
+ENV NGINX_VERSION=1.11.6-1~jessie \
     TERM=xterm-256color
 
 ADD packages/nginx_${NGINX_VERSION}_amd64.deb /tmp/nginx.deb
